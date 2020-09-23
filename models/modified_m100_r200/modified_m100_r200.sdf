@@ -1,0 +1,20 @@
+<?xml version='1.0'?>
+<sdf version='1.5'>
+  <model name='modified_m100_r200'>
+
+    <include>
+      <uri>model://modified_m100</uri>
+    </include>
+
+    <!--r200 RGB depth camera-->
+    <include>
+      <uri>model://modified_r200</uri>
+      <pose>0.15 0 0.15 0 0 0</pose>
+    </include>
+
+    <joint name="modified_r200_joint" type="fixed">
+      <parent>modified_m100::base_link</parent>
+      <child>modified_r200::link</child>
+    </joint>
+  </model>
+</sdf>

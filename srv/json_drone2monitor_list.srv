@@ -1,0 +1,4 @@
+int32 key
+jsonList wpList
+----------
+bool res

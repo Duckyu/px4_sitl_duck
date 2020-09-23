@@ -1,0 +1,15 @@
+wp_vel : 0.4
+take_off_vel : 0.5
+landing_vel : 0.5
+yaw_vel : 0.2
+
+take_off_height : 1.5
+
+threshold_distance : 0.5
+arrive_distance : 0.25
+threshold_yaw : 0.03
+
+LOS_radius : 0.5
+auto_arrive_delay : 5.0
+
+test_mode : 0

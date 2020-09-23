@@ -1,0 +1,5 @@
+int8 line_num
+---
+bool exist
+int8 total_line
+geometry_msgs/Pose waypoint

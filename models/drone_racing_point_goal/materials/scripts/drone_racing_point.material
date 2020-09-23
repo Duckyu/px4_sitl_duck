@@ -1,0 +1,27 @@
+material point/start
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture start_2.png
+      }
+    }
+  }
+}
+
+material point/goal
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture goal_2.png
+      }
+    }
+  }
+}

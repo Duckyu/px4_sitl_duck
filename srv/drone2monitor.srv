@@ -1,0 +1,4 @@
+int32 key
+WaypointInform wpList
+----------
+bool res

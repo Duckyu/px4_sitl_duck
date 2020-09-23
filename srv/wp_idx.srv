@@ -1,0 +1,4 @@
+int32 key
+int32 idx
+----------
+bool res

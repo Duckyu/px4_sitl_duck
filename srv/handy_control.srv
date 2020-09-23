@@ -1,0 +1,16 @@
+# 'manual_control' service server defined in uav_control or uav_control package
+
+uint8 direction
+uint8 X_PLUS = 0
+uint8 X_MINUS = 1
+uint8 Y_PLUS = 2
+uint8 Y_MINUS = 3
+uint8 Z_PLUS = 4
+uint8 Z_MINUS = 5
+uint8 YAW_PLUS = 6
+uint8 YAW_MINUS = 7
+
+float64 distance
+float64 DEFUALT_DISTANCE = 0.1
+---
+bool result

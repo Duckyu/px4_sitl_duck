@@ -1,0 +1,4 @@
+int8 gimbalType
+int8 camID
+---
+bool result

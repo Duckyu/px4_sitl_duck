@@ -1,0 +1,6 @@
+<launch>
+    <arg name="waypoint_file_path" default="$(find px4_sitl_duck)/waypoint_data/wp_scenario.txt"/>
+    <param name="/wp_file_path" type="string" value="$(arg waypoint_file_path)" />
+    <!-- waypoint text reader -->
+    <node name="waypoint_reader" pkg="px4_sitl_duck" type="waypoint_reader" output="screen"/>
+</launch>
