@@ -7,7 +7,7 @@
 
     <include>
       <uri>model://velodyne_VLP16</uri>
-      <pose>0.08 0 0.1 0 0.785398 0</pose>
+      <pose>0.08 0 0.1 0 0.5235988 0</pose>
     </include>
     <joint name="VLP16_joint" type="fixed">
       <child>velodyne_VLP16::base_footprint</child>
@@ -20,6 +20,5 @@
         </limit>
       </axis>
     </joint>
-
   </model>
 </sdf>
