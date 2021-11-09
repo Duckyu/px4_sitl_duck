@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sun Sep 30 20:02:45 2018
-
-@author: mason
-"""
 
 import numpy as np
 import rospy
