@@ -17,9 +17,9 @@ import sys
 import signal
 
 def signal_handler(signal, frame): # ctrl + c -> exit program
-        print('You pressed Ctrl+C!')
-        sys.exit(0)
-signal.signal(signal.SIGINT, signal_handler)
+    print('You pressed Ctrl+C!')
+    sys.exit(0)
+    signal.signal(signal.SIGINT, signal_handler)
 ''' class '''
 class UAV():
     def __init__(self):
@@ -54,20 +54,20 @@ inn=0
 
 ''' main '''
 if __name__ == '__main__':
- while 1:
-   if turtle.nemo==1:
-        vel_msg.linear.x=turtle.linear*0.4
-        vel_msg.angular.z=turtle.angular*1.2
-   elif turtle.semo==1:
-        #subprocess.call('',shell=True)
-        p=subprocess.Popen('rostopic pub /mobile_base/commands/reset_odometry std_msgs/Empty "{}"',shell=True)
-        time.sleep(2)
-        p.terminate()
-   elif turtle.one==1:
-        vel_msg.linear.x=turtle.linear*0.7
-        vel_msg.angular.z=turtle.angular*2
-   elif turtle.x==1:
-        vel_msg.linear.x=0
-        vel_msg.angular.z=0
-turtle.moving(vel_msg)        
-   duck.rate.sleep()
+    while 1:
+        if turtle.nemo==1:
+            vel_msg.linear.x=turtle.linear*0.4
+            vel_msg.angular.z=turtle.angular*1.2
+        elif turtle.semo==1:
+            #subprocess.call('',shell=True)
+            p=subprocess.Popen('rostopic pub /mobile_base/commands/reset_odometry std_msgs/Empty "{}"',shell=True)
+            time.sleep(2)
+            p.terminate()
+        elif turtle.one==1:
+            vel_msg.linear.x=turtle.linear*0.7
+            vel_msg.angular.z=turtle.angular*2
+        elif turtle.x==1:
+            vel_msg.linear.x=0
+            vel_msg.angular.z=0
+        turtle.moving(vel_msg)        
+        duck.rate.sleep()

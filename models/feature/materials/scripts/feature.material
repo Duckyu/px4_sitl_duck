@@ -1,0 +1,14 @@
+material feature/complex
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture unnamed.jpg
+      }
+    }
+  }
+}
+

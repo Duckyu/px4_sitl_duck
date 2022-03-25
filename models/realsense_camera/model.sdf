@@ -1,9 +1,9 @@
-<?xml version="1.0"?>
+<xml version="1.0">
 <sdf version="1.5">
   <model name="realsense_camera">
     <plugin name="realsense_plugin" filename="libRealSensePlugin.so"/>
     <pose frame="">0 0 0.015 0 0 0</pose>
-    <link name="link">
+    <link name="d435i">
       <inertial>
         <mass>0.0615752</mass>
         <inertia>
@@ -82,7 +82,7 @@
           </contact>
         </surface>
       </collision>
-      <sensor name="color" type="camera">
+       <sensor name="color" type="camera">
         <pose frame="">0 -0.046 0.004 0 0 0</pose>
         <camera name="__default__">
           <horizontal_fov>1.047</horizontal_fov>
@@ -104,10 +104,24 @@
         <always_on>1</always_on>
         <update_rate>60</update_rate>
         <visualize>1</visualize>
+        <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+          <alwaysOn>true</alwaysOn>
+          <updateRate>0.0</updateRate>
+          <cameraName>rrbot/camera1</cameraName>
+          <imageTopicName>image_raw</imageTopicName>
+          <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+          <frameName>camera_link</frameName>
+          <hackBaseline>0.07</hackBaseline>
+          <distortionK1>0.0</distortionK1>
+          <distortionK2>0.0</distortionK2>
+          <distortionK3>0.0</distortionK3>
+          <distortionT1>0.0</distortionT1>
+          <distortionT2>0.0</distortionT2>
+        </plugin>
       </sensor>
-      <sensor name="ired1" type="camera">
+      <sensor name="ired_left" type="camera">
         <pose frame="">0 -0.06 0.004 0 0 0</pose>
-        <camera name="__default__">
+        <camera name="left">
           <horizontal_fov>1.047</horizontal_fov>
           <image>
             <width>640</width>
@@ -123,14 +137,42 @@
             <mean>0.0</mean>
             <stddev>0.007</stddev>
           </noise>
+          <distortion>
+            <k1>0.0027850474945532505</k1>
+            <k1>-0.005865692434342952</k2>
+            <p1>-0.001072612090641944</p1>
+            <p2>0.0014691347421880948</p2>
+          </distortion>
+          <lens>
+            <intrinsics>
+              <fx>381.9464518100138 </fx>
+              <fy>381.4329659488975</fy>
+              <cx>326.62853519597803</cx>
+              <cy>243.91977405884404</cy>
+            </intrinsics>
+          </lens>
         </camera>
         <always_on>1</always_on>
         <update_rate>60</update_rate>
         <visualize>0</visualize>
+        <plugin name="left_controller" filename="libgazebo_ros_camera.so">
+          <alwaysOn>true</alwaysOn>
+          <updateRate>0.0</updateRate>
+          <cameraName>d435i/left</cameraName>
+          <imageTopicName>image_raw</imageTopicName>
+          <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+          <frameName>left</frameName>
+          <hackBaseline>0.07</hackBaseline>
+          <distortionK1>0.0</distortionK1>
+          <distortionK2>0.0</distortionK2>
+          <distortionK3>0.0</distortionK3>
+          <distortionT1>0.0</distortionT1>
+          <distortionT2>0.0</distortionT2>
+        </plugin>
       </sensor>
-      <sensor name="ired2" type="camera">
+      <sensor name="ired_right" type="camera">
         <pose frame="">0 0.01 0.004 0 0 0</pose>
-        <camera name="__default__">
+        <camera name="right">
           <horizontal_fov>1.047</horizontal_fov>
           <image>
             <width>640</width>
@@ -146,14 +188,42 @@
             <mean>0.0</mean>
             <stddev>0.007</stddev>
           </noise>
+          <distortion>
+            <k1>0.00278106154377129</k1>
+            <k1>-0.00540454719158858</k2>
+            <p1>-0.0010090283986047663</p1>
+            <p2>0.0012375785133337909</p2>
+          </distortion>
+          <lens>
+            <intrinsics>
+              <fx>382.045479426804</fx>
+              <fy>381.53486030547083</fy>
+              <cx>326.13159384404105</cx>
+              <cy>244.49852378472505</cy>
+            </intrinsics>
+          </lens>
         </camera>
         <always_on>1</always_on>
         <update_rate>60</update_rate>
         <visualize>0</visualize>
+        <plugin name="right_controller" filename="libgazebo_ros_camera.so">
+          <alwaysOn>true</alwaysOn>
+          <updateRate>0.0</updateRate>
+          <cameraName>d435i/right</cameraName>
+          <imageTopicName>image_raw</imageTopicName>
+          <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+          <frameName>right</frameName>
+          <hackBaseline>0.07</hackBaseline>
+          <distortionK1>0.0</distortionK1>
+          <distortionK2>0.0</distortionK2>
+          <distortionK3>0.0</distortionK3>
+          <distortionT1>0.0</distortionT1>
+          <distortionT2>0.0</distortionT2>
+        </plugin>
       </sensor>
       <sensor name="depth" type="depth">
-        <pose frame="">0 -0.03 0.004 0 0 0</pose>
-        <camera name="__default__">
+        <pose frame="cam_link">0 -0.03 0.004 0 0 0</pose>
+        <camera name="depth">
           <horizontal_fov>1.047</horizontal_fov>
           <image>
             <width>640</width>
@@ -172,6 +242,29 @@
         <always_on>1</always_on>
         <update_rate>60</update_rate>
         <visualize>0</visualize>
+        <plugin name="d435i_depth" filename="libgazebo_ros_openni_kinect.so">
+          <baseline>0.2</baseline>
+          <alwaysOn>true</alwaysOn>
+          <updateRate>1.0</updateRate>
+          <cameraName>d435i</cameraName>
+          <imageTopicName>/d435i/depth/image_raw</imageTopicName>
+          <cameraInfoTopicName>/d435i/depth/camera_info</cameraInfoTopicName>
+          <depthImageTopicName>/d435i/depth/image_raw</depthImageTopicName>
+          <depthImageInfoTopicName>/d435i/depth/camera_info</depthImageInfoTopicName>
+          <pointCloudTopicName>/d435i/depth/points</pointCloudTopicName>
+          <frameName>d435i</frameName>
+          <pointCloudCutoff>0.5</pointCloudCutoff>
+          <distortionK1>0.00000001</distortionK1>
+          <distortionK2>0.00000001</distortionK2>
+          <distortionK3>0.00000001</distortionK3>
+          <distortionT1>0.00000001</distortionT1>
+          <distortionT2>0.00000001</distortionT2>
+          <CxPrime>0</CxPrime>
+          <Cx>0</Cx>
+          <Cy>0</Cy>
+          <focalLength>0</focalLength>
+          <hackBaseline>0</hackBaseline>
+        </plugin>
       </sensor>
     </link>
   </model>

@@ -1,0 +1,102 @@
+<sdf version='1.6'>
+  <!-- temporal tester-->
+  <model name="box">
+    <pose>0 0 0 0 0 0</pose>
+    <link name="box_link">
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <mass>300</mass>
+        <inertia>
+          <ixx>1.25</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.25</iyy>
+          <iyz>0</iyz>
+          <izz>1.25</izz>   
+        </inertia>
+      </inertial>
+      <visual name="box_visual">
+        <pose>0 0 0.25 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="box_collision">
+        <pose>0 0 0.25 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.5</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="actuator_l">
+      <pose>0.25 0 0.25 0 0 0</pose>
+    </link>
+    <link name="actuator_r">
+      <pose>-0.25 0 0.25  0 0 0</pose>
+    </link>
+    <link name="actuator_f">
+      <pose>0 0.25 0.25 0 0 0</pose>
+    </link>
+    <link name="actuator_b">
+      <pose>0 -0.25 0.25 0 0 0</pose>
+    </link>
+    <link name="actuator_u">
+      <pose>0 0 0.5 0 0 0</pose>
+    </link>
+    <link name="actuator_d">
+      <pose>0 0 0 0 0 0</pose>
+    </link>
+    <joint name="joint_l" type="revolute">
+      <parent>box_link</parent>
+      <child>actuator_l</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+    <joint name="joint_r" type="revolute">
+      <parent>box_link</parent>
+      <child>actuator_r</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>-1 0 0</xyz>
+      </axis>
+    </joint>
+    <joint name="joint_f" type="revolute">
+      <parent>box_link</parent>
+      <child>actuator_f</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <joint name="joint_b" type="revolute">
+      <parent>box_link</parent>
+      <child>actuator_b</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 -1 0</xyz>
+      </axis>
+    </joint>
+    <joint name="joint_u" type="revolute">
+      <parent>box_link</parent>
+      <child>actuator_u</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+    <joint name="joint_d" type="revolute">
+      <parent>box_link</parent>
+      <child>actuator_d</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 -1</xyz>
+      </axis>
+    </joint>
+  </model>
+</sdf>

@@ -1,0 +1,40 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+	<model name='random_wall'>
+
+		<static>true</static>
+
+		<link name='link'>
+			<visual name='visual'>
+				<geometry>
+					<mesh>
+						<uri>model://random_wall/meshes/small_random_wall.stl</uri>
+						<!--scale>0.1 0.1 0.1</scale-->
+					</mesh>
+				</geometry>
+				<material>
+					<script>
+						<uri>model://random_wall/materials/scripts</uri>
+						<uri>model://random_wall/materials/textures</uri>
+						<name>vrc/concrete</name>
+					</script>
+				</material>
+			</visual>
+			<collision name='collision'>
+				<geometry>
+					<mesh>
+						<uri>model://random_wall/meshes/small_random_wall.stl</uri>
+						<!--scale>0.1 0.1 0.1</scale-->
+					</mesh>
+				</geometry>
+				<material>
+					<script>
+						<uri>model://random_wall/materials/scripts</uri>
+						<uri>model://random_wall/materials/textures</uri>
+						<name>vrc/concrete</name>
+					</script>
+				</material>
+			</collision>
+		</link>
+	</model>
+</sdf>

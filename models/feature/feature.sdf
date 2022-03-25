@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="feature">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <box>
+            <size>100 100 0.01</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+		<uri>model://feature/materials/scripts</uri>
+		<uri>model://feature/materials/textures</uri>
+		<name>feature/complex</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="visual">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <box>
+            <size>100 100 0.02</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

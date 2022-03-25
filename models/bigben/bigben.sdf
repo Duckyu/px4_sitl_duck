@@ -1,0 +1,40 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+	<model name='deungsun_bridge'>
+
+		<static>true</static>
+
+		<link name='link'>
+			<visual name='visual'>
+				<geometry>
+					<mesh>
+						<uri>model://bigben/meshes/bigben.dae</uri>
+						<!--scale>0.1 0.1 0.1</scale-->
+					</mesh>
+				</geometry>
+				<!--material>
+					<script>
+						<uri>model://deungsun_bridge/materials/scripts</uri>
+						<uri>model://deungsun_bridge/materials/textures</uri>
+						<name>vrc/concrete</name>
+					</script>
+				</material-->
+			</visual>
+			<collision name='collision'>
+				<geometry>
+					<mesh>
+						<uri>model://deungsun_bridge/meshes/deungsun_bridge_simple.dae</uri>
+						<!--scale>0.1 0.1 0.1</scale-->
+					</mesh>
+				</geometry>
+				<!--material>
+					<script>
+						<uri>model://deungsun_bridge/materials/scripts</uri>
+						<uri>model://deungsun_bridge/materials/textures</uri>
+						<name>vrc/concrete</name>
+					</script>
+				</material-->
+			</collision>
+		</link>
+	</model>
+</sdf>

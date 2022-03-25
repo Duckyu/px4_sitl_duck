@@ -11,7 +11,7 @@
     </include>
     <joint name="realsense_camera" type="fixed">
       <parent>modified_m100::base_link</parent>
-      <child>realsense_camera::link</child>
+      <child>realsense_camera::d435i</child>
     </joint>
   </model>
 </sdf>
