@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="default">
+    <gui>
+      <camera name="user_camera">
+        <pose>10.7 -7.1 61 0 1.13 1.93</pose>
+      </camera>
+    </gui>
+    <scene>
+      <sky>
+        <clouds>
+          <speed>3</speed>
+        </clouds>
+      </sky>
+      <ambient>0.625 0.625 0.625 1</ambient>
+      <background>0.65 0.65 0.65 1</background>
+      <shadows>0</shadows>
+    </scene>
+
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun_2</uri>
+    </include>
+
+    <!-- map one-->
+    <include>
+      <uri>model://tree_map</uri>
+      <pose>-18.5 -14 0 0 0 0</pose>
+    </include>
+
+
+  </world>
+</sdf>

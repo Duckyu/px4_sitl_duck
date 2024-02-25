@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<sdf version='1.5'>
+  <model name='iris_front_up_r200'>
+    <include>
+      <uri>model://iris</uri>
+    </include>
+    <include>
+      <name>front_d435i</name>
+      <uri>model://realsense_camera</uri>
+      <pose>0.1 0 0 0 0 0</pose>
+    </include>
+    <include>
+      <name>up_d435i</name>
+      <uri>model://realsense_camera</uri>
+      <pose>0 0 0.1 0 -1.570796 0</pose>
+    </include>
+    <joint name="up_joint" type="revolute">
+      <child>up_d435i::d435i</child>
+      <parent>iris::base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+    <joint name="front_joint" type="revolute">
+      <child>front_d435i::d435i</child>
+      <parent>iris::base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+  </model>
+</sdf>

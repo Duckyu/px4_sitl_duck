@@ -1,0 +1,67 @@
+#!/bin/sh
+#
+# @name CAROS H simple SITL
+#
+# @type CAROS H simple
+#
+# @maintainer Duckyu Choi <duckyu@kaist.ac.kr>
+#
+
+. ${R}etc/init.d/rc.mc_defaults
+
+
+param set-default CA_AIRFRAME 0
+
+param set-default CA_ROTOR_COUNT 8
+# param set-default CA_R_REV 255
+
+param set-default CA_ROTOR0_PX 0.386247
+param set-default CA_ROTOR0_PY -0.223
+param set-default CA_ROTOR0_KM 0.05 # CCW
+
+param set-default CA_ROTOR1_PX 0.386247
+param set-default CA_ROTOR1_PY 0.223
+param set-default CA_ROTOR1_KM 0.05 # CCW
+
+param set-default CA_ROTOR2_PX 0
+param set-default CA_ROTOR2_PY 0.447
+param set-default CA_ROTOR2_KM -0.05 # CW
+
+param set-default CA_ROTOR3_PX -0.386247
+param set-default CA_ROTOR3_PY 0.223
+param set-default CA_ROTOR3_KM -0.05 # CW
+
+param set-default CA_ROTOR4_PX -0.386247
+param set-default CA_ROTOR4_PY -0.223
+param set-default CA_ROTOR4_KM 0.05 # CCW
+
+param set-default CA_ROTOR5_PX 0
+param set-default CA_ROTOR5_PY -0.447
+param set-default CA_ROTOR5_KM -0.05 # CW
+
+param set-default CA_ROTOR6_PX -0.386247
+param set-default CA_ROTOR6_PY 0.223
+param set-default CA_ROTOR6_PZ 0.05
+param set-default CA_ROTOR6_KM 0.05 # CCW
+
+param set-default CA_ROTOR7_PX 0.386247
+param set-default CA_ROTOR7_PY -0.223
+param set-default CA_ROTOR7_PZ 0.05
+param set-default CA_ROTOR7_KM -0.05 # CW
+
+param set-default PWM_MAIN_FUNC1 101
+param set-default PWM_MAIN_FUNC2 102
+param set-default PWM_MAIN_FUNC3 103
+param set-default PWM_MAIN_FUNC4 104
+param set-default PWM_MAIN_FUNC5 105
+param set-default PWM_MAIN_FUNC6 106
+param set-default PWM_MAIN_FUNC7 107
+param set-default PWM_MAIN_FUNC8 108
+
+# disable MC desaturation which improves attitude tracking
+param set-default CA_METHOD 0
+
+# disable attitude failure detection
+param set-default FD_FAIL_P 0
+param set-default FD_FAIL_R 0
+

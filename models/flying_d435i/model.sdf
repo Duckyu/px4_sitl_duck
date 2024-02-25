@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name='flying_d435i'>
+    <pose frame="">0 0 0.015 0 0 0</pose>
+    <include>
+      <uri>model://iris</uri>
+    </include>
+    <include>
+      <uri>model://d435i</uri>
+      <pose>0.1 0 0.05 0 0 0</pose>
+    </include>
+    <joint name="realsense_camera_joint" type="fixed">
+      <child>d435i::camera</child>
+      <parent>iris::base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+  </model>
+</sdf>
